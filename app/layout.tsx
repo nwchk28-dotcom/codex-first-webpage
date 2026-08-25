@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "小さな一歩を、世界へ。｜GitHub練習",
+  title: "最初の一歩｜GitHub練習",
   description: "CodexとGitHubを使って作成・公開した、最初のWebページです。",
   icons: {
     icon: "/favicon.svg",

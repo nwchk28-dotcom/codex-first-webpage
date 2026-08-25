@@ -11,10 +11,7 @@ export default function Home() {
 
       <section className="hero" id="top">
         <div className="eyebrow"><span aria-hidden="true" /> First publish</div>
-        <h1>
-          小さな一歩を、<br />
-          <em>世界へ。</em>
-        </h1>
+        <h1><em>最初の一歩</em></h1>
         <p className="lead">
           このページは Codex と GitHub を使って作成・公開しました。
           今日の練習が、次のアイデアにつながります。
