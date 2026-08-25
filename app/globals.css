@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #17211b;
+  --paper: #f4f0e7;
+  --accent: #ff5a36;
+  --green: #b9e769;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+}
+a { color: inherit; text-decoration: none; }
+
+main { min-height: 100vh; overflow: hidden; }
+nav {
+  height: 88px;
+  padding: 0 clamp(24px, 6vw, 96px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(23, 33, 27, .18);
+}
+.brand { display: flex; align-items: center; gap: 12px; font-weight: 800; letter-spacing: .02em; }
+.brandMark {
+  width: 34px; height: 34px; display: grid; place-items: center;
+  border-radius: 50%; background: var(--ink); color: var(--paper);
+  font: 800 16px/1 Georgia, serif;
+}
+.navLink { font-size: 13px; font-weight: 700; border-bottom: 1px solid; padding-bottom: 4px; }
+
+.hero {
+  position: relative;
+  min-height: 680px;
+  padding: clamp(80px, 12vw, 150px) clamp(24px, 10vw, 160px) 100px;
+}
+.eyebrow { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+.eyebrow span { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+h1 {
+  position: relative; z-index: 2; margin: 26px 0 26px;
+  max-width: 900px; font-size: clamp(64px, 10vw, 148px); line-height: .91;
+  letter-spacing: -.07em; font-weight: 900;
+}
+h1 em { color: var(--accent); font-family: Georgia, "Yu Mincho", serif; font-weight: 400; }
+.lead { max-width: 560px; font-size: clamp(16px, 2vw, 20px); line-height: 1.9; color: #405046; }
+.button {
+  display: inline-flex; align-items: center; gap: 35px; margin-top: 25px;
+  padding: 17px 21px; background: var(--ink); color: white; font-size: 14px; font-weight: 700;
+  transition: transform .2s ease, background .2s ease;
+}
+.button:hover { transform: translateY(-3px); background: var(--accent); }
+.button:focus-visible, .navLink:focus-visible, .brand:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+.orbit { position: absolute; border: 1px solid rgba(23,33,27,.18); border-radius: 50%; pointer-events: none; }
+.orbitOne { width: 380px; height: 380px; right: 8%; top: 14%; }
+.orbitTwo { width: 210px; height: 210px; right: 20%; top: 32%; background: var(--green); border: 0; opacity: .85; }
+.spark { position: absolute; color: var(--accent); font-size: 42px; }
+.sparkOne { right: 11%; top: 19%; }.sparkTwo { right: 30%; bottom: 15%; font-size: 22px; }
+
+.message {
+  display: grid; grid-template-columns: .65fr 1.6fr .7fr; gap: clamp(30px, 6vw, 90px);
+  align-items: start; padding: 90px clamp(24px, 10vw, 160px);
+  background: var(--ink); color: var(--paper);
+}
+.sectionNumber { margin: 8px 0; color: var(--green); font: 700 11px/1.5 monospace; letter-spacing: .14em; }
+.message h2 { margin: 0 0 18px; font-size: clamp(36px, 5vw, 68px); letter-spacing: -.05em; }
+.message div > p { margin: 0; max-width: 620px; color: #b8c2bc; line-height: 1.9; }
+.statusCard { display: flex; align-items: center; gap: 14px; padding-top: 10px; }
+.statusCard div { display: flex; flex-direction: column; gap: 4px; }
+.statusCard strong { font-size: 12px; letter-spacing: .16em; color: var(--green); }
+.statusCard small { color: #b8c2bc; white-space: nowrap; }
+.statusDot { width: 12px; height: 12px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 6px rgba(185,231,105,.12); }
+footer { display: flex; justify-content: space-between; padding: 24px clamp(24px, 6vw, 96px); font: 700 11px/1 monospace; letter-spacing: .1em; }
+
+@media (max-width: 760px) {
+  nav { height: 72px; }
+  .hero { min-height: 650px; padding-top: 90px; }
+  h1 { font-size: clamp(58px, 19vw, 96px); }
+  .lead { max-width: 88%; }
+  .orbitOne { width: 270px; height: 270px; right: -110px; top: 32%; }
+  .orbitTwo { width: 150px; height: 150px; right: -35px; top: 42%; }
+  .sparkOne { right: 5%; top: 35%; }
+  .message { grid-template-columns: 1fr; padding-top: 70px; padding-bottom: 70px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .button { transition: none; }
+}
